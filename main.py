@@ -23,7 +23,7 @@ cfg.merge_from_file(model_zoo.get_config_file("COCO-Detection/faster_rcnn_R_101_
 cfg.DATALOADER.NUM_WORKERS = 6
 cfg.MODEL.ROI_HEADS.NUM_CLASSES = 2
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.75
-cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
+cfg.MODEL.WEIGHTS = "model_final.pth"
 my_metadata = Metadata(name= "cats_train")
 cfg.MODEL.DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 my_metadata.set(thing_classes = ['Tiger', 'Leopard'])# Let training initialize from model zoo
